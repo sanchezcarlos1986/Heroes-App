@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import PropTypes from 'prop-types';
 import {getHeroesByPublisher} from '~selectors';
 import {HeroCard} from '~components';
@@ -10,7 +10,7 @@ import {HeroCard} from '~components';
  * @return {function} HeroList
  */
 export default function HeroList({publisher}) {
-  const heroes = getHeroesByPublisher(publisher);
+  const heroes = useMemo(() => getHeroesByPublisher(publisher), [publisher]);
 
   return (
     <ul className="card-columns">

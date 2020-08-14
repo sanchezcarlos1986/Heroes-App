@@ -7,7 +7,6 @@ import {Link} from 'react-router-dom';
  * @constructor
  * @param {string} id
  * @param {string} superhero
- * @param {string} publisher
  * @param {string} alter_ego
  * @param {string} first_appearance
  * @param {string} characters
@@ -16,7 +15,6 @@ import {Link} from 'react-router-dom';
 export default function HeroCard({
   id,
   superhero,
-  publisher,
   alter_ego: alterEgo,
   first_appearance: firstAppearance,
   characters,
@@ -52,7 +50,6 @@ export default function HeroCard({
 HeroCard.propTypes = {
   id: PropTypes.string.isRequired,
   superhero: PropTypes.string.isRequired,
-  publisher: PropTypes.string.isRequired,
   alter_ego: PropTypes.string.isRequired,
   first_appearance: PropTypes.string.isRequired,
   characters: PropTypes.string.isRequired,
