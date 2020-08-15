@@ -11,6 +11,7 @@ export default function MarvelScreen() {
   return (
     <div>
       <h1>MarvelScreen</h1>
+      <hr />
       <HeroList publisher={PUBLISHERS.MARVEL_COMICS} />
     </div>
   );

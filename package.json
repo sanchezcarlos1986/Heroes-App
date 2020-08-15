@@ -85,6 +85,8 @@
     "~hooks": "src/hooks/",
     "~helpers": "src/helpers/",
     "~routers": "src/routers/",
+    "~auth": "src/auth/",
+    "~types": "src/types/",
     "~data": "src/data/",
     "~selectors": "src/selectors/",
     "~components": "src/components/",

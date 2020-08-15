@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import PropTypes from 'prop-types';
+import {AuthContext} from '~auth';
+import {types} from '~types';
 
 /**
  * Represents LoginScreen component
@@ -8,7 +10,14 @@ import PropTypes from 'prop-types';
  * @return {function} LoginScreen
  */
 function LoginScreen({history}) {
-  const handleClick = () => {
+  const {dispatch} = useContext(AuthContext);
+
+  const handleLogin = () => {
+    dispatch({
+      type: types.login,
+      payload: {name: 'Carlos Sánchez'},
+    });
+
     history.replace('/');
   };
 
@@ -16,7 +25,7 @@ function LoginScreen({history}) {
     <div className="container mt-5">
       <h1>LoginScreen</h1>
       <hr />
-      <button className="btn btn-primary" onClick={handleClick}>
+      <button className="btn btn-primary" onClick={handleLogin}>
         Login
       </button>
     </div>
