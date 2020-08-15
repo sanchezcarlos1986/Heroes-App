@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {LoginScreen} from '~components';
-import {DashboardRoutes, PrivateRoute} from '~routers';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {DashboardRoutes, PrivateRoute, PublicRoute} from '~routers';
+import {BrowserRouter as Router, Switch} from 'react-router-dom';
 import {AuthContext} from '~auth';
 
 /**
@@ -15,7 +15,12 @@ export default function AppRouter() {
     <Router>
       <div>
         <Switch>
-          <Route exact path="/login" component={LoginScreen} />
+          <PublicRoute
+            exact
+            path="/login"
+            component={LoginScreen}
+            isAuth={user.logged}
+          />
           <PrivateRoute
             path="/"
             component={DashboardRoutes}
