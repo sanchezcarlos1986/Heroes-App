@@ -10,6 +10,7 @@ function Navbar() {
   const links = [
     {to: '/marvel', title: 'Marvel'},
     {to: '/dc', title: 'DC'},
+    {to: '/search', title: 'Search'},
   ];
   return (
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark">

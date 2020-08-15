@@ -4,3 +4,4 @@ export {default as HeroCard} from './heroes/HeroCard';
 export {default as LoginScreen} from './login/LoginScreen';
 export {default as MarvelScreen} from './marvel/MarvelScreen';
 export {default as DcScreen} from './dc/DcScreen';
+export {default as SearchScreen} from './search/SearchScreen';

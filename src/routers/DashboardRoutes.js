@@ -1,6 +1,6 @@
 import React from 'react';
 import {Navbar} from '~ui';
-import {MarvelScreen, HeroScreen, DcScreen} from '~components';
+import {MarvelScreen, HeroScreen, DcScreen, SearchScreen} from '~components';
 import {Switch, Route, Redirect} from 'react-router-dom';
 
 /**
@@ -17,6 +17,7 @@ export default function DashboardRoutes() {
           <Route exact path="/marvel" component={MarvelScreen} />
           <Route exact path="/hero/:heroeId" component={HeroScreen} />
           <Route exact path="/dc" component={DcScreen} />
+          <Route exact path="/search" component={SearchScreen} />
           <Redirect to="/marvel" />
         </Switch>
       </div>
