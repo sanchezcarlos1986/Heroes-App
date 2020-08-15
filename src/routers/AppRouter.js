@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {LoginScreen} from '~components';
-import {DashboardRoutes} from '~routers';
+import {DashboardRoutes, PrivateRoute} from '~routers';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {AuthContext} from '~auth';
 
 /**
  * Represents AppRouter component
@@ -9,12 +10,17 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
  * @return {function} AppRouter
  */
 export default function AppRouter() {
+  const {user} = useContext(AuthContext);
   return (
     <Router>
       <div>
         <Switch>
           <Route exact path="/login" component={LoginScreen} />
-          <Route path="/" component={DashboardRoutes} />
+          <PrivateRoute
+            path="/"
+            component={DashboardRoutes}
+            isAuth={user.logged}
+          />
         </Switch>
       </div>
     </Router>
