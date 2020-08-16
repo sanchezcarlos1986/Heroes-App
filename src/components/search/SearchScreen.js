@@ -59,8 +59,8 @@ export default function SearchScreen({history}) {
           ) : null}
 
           {q !== '' && heroesFiltered.length === 0 ? (
-            <div className="alert alert-info">
-              {`We couln't find`} <strong>{q}</strong>
+            <div className="alert alert-danger">
+              {`We couldn't find`} <strong>{q}</strong>
             </div>
           ) : null}
 
