@@ -9,20 +9,22 @@ import {Route, Redirect} from 'react-router-dom';
  * @param {function} component
  * @return {function} PrivateRoute
  */
-export default function PrivateRoute({isAuth, component: Component, ...rest}) {
-  localStorage.setItem('lastPath', JSON.stringify(rest.location.pathname));
+const PrivateRoute = ({isAuth, component: Component, ...rest}) => {
+  localStorage.setItem('lastPath', rest.location.pathname);
 
   return (
     <Route
+      {...rest}
       component={props =>
         isAuth ? <Component {...props} /> : <Redirect to="/login" />
       }
-      {...rest}
     />
   );
-}
+};
 
 PrivateRoute.propTypes = {
   isAuth: PropTypes.bool.isRequired,
   component: PropTypes.func.isRequired,
 };
+
+export default PrivateRoute;

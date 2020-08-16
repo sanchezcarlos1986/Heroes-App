@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "enzyme-to-json": "^3.5.0",
     "link-module-alias": "^1.2.0",
     "prop-types": "^15.7.2",
     "query-string": "^6.13.1",
@@ -19,7 +20,7 @@
     "dev": "yarn start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "coverage": "npm run test -- --coverage --watchAll",
+    "test:coverage": "npm run test -- --coverage --watchAll",
     "eject": "react-scripts eject",
     "branch-naming-check": "branch-naming-check \"^(master|develop)|(feature|bugfix|refactor|ci|hotfix|jira|issue|renovate)/[a-zA-Z0-9._-]+$\"",
     "postinstall": "link-module-alias"

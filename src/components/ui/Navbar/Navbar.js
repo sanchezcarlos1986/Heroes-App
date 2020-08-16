@@ -1,4 +1,4 @@
-import React, {useContext, memo} from 'react';
+import React, {useContext} from 'react';
 import {AuthContext} from '~auth';
 import {Link, NavLink, useHistory} from 'react-router-dom';
 import {types} from '~types';
@@ -50,7 +50,9 @@ function Navbar() {
 
       <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul className="navbar-nav ml-auto">
-          <span className="nav-item nav-link text-info">{user.name}</span>
+          <span className="nav-item nav-link text-info user-name">
+            {user.name}
+          </span>
           <button onClick={handleLogout} className="nav-item nav-link btn">
             Logout
           </button>
@@ -60,4 +62,4 @@ function Navbar() {
   );
 }
 
-export default memo(Navbar);
+export default Navbar;
